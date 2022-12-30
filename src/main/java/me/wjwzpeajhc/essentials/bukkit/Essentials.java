@@ -1,20 +1,26 @@
-package me.wjwzpeajhc.filedeletion.bukkit;
+package me.wjwzpeajhc.essentials.bukkit;
 
-import me.wjwzpeajhc.filedeletion.common.FileDeleter;
-import me.wjwzpeajhc.filedeletion.common.Config;
+import me.wjwzpeajhc.essentials.common.FileDeleter;
+import me.wjwzpeajhc.essentials.common.Config;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.server.ServerLoadEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 
-public class FileDeletion extends JavaPlugin {
+public class Essentials extends JavaPlugin implements Listener {
 
     private Config config;
 
     @Override
     public void onEnable() {
         this.config = new Config(getDataFolder() + File.separator + "config.yml");
-        FileDeleter deleter = new FileDeleter(config);
+    }
 
+    @EventHandler
+    public void onLoad(ServerLoadEvent event) {
+        FileDeleter deleter = new FileDeleter(config);
         delete(deleter);
     }
 
