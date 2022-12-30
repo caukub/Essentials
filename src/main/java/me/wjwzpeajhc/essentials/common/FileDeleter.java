@@ -1,4 +1,4 @@
-package me.wjwzpeajhc.filedeletion.common;
+package me.wjwzpeajhc.essentials.common;
 
 import java.io.File;
 import java.time.Instant;

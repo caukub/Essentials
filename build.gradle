@@ -3,7 +3,7 @@ plugins {
     id 'com.github.johnrengelman.shadow' version '7.1.2'
 }
 
-group 'me.j3.filedeletion'
+group 'me.j3.essentials'
 version '1.0-SNAPSHOT'
 
 repositories {
@@ -34,7 +34,7 @@ dependencies {
 }
 
 shadowJar {
-    archiveFileName = "FileDeletion.jar"
+    archiveFileName = "Essentials.jar"
 }
 
 java {
