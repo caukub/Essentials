@@ -30,8 +30,8 @@ public class Essentials {
     public void onProxyInitialization(ProxyInitializeEvent event) {
         var deleter = new FileDeleter(config);
         server.getScheduler().buildTask(this, () -> {
-            delete(deleter);
-        })
+                    delete(deleter);
+                })
                 .delay(config.deletionDelay, TimeUnit.SECONDS)
                 .schedule();
     }
